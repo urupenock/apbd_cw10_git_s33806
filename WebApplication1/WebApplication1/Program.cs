@@ -5,6 +5,7 @@ using WebApplication1.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddOpenApi();
 builder.Services.AddScoped<IDbService, DbService>();
 builder.Services.AddDbContext<AppDbContext>(opt =>
 {
@@ -15,6 +16,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.MapOpenApi();
     app.UseSwaggerUI(opt =>
     {
         opt.SwaggerEndpoint("/openapi/v1.json", "v1");
