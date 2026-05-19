@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace WebApplication1.Entities;
 
-public class Components
+public class Component
 {
     [Key]
     [MaxLength(10)]
@@ -13,9 +13,9 @@ public class Components
     public string? Description { get; set; }
     public int ComponentManufacturersId { get; set; }
     [ForeignKey(nameof(ComponentManufacturersId))]
-    public virtual ComponentManufacturers ComponentManufacturer { get; set; } = null!;
+    public virtual ComponentManufacturer ComponentManufacturer { get; set; } = null!;
     public int ComponentTypesId { get; set; }
     [ForeignKey(nameof(ComponentTypesId))]
-    public virtual ComponentTypes ComponentType { get; set; } = null!;
-    public virtual ICollection<PcComponents> PcComponents { get; set; } = new List<PcComponents>();
+    public virtual ComponentType ComponentType { get; set; } = null!;
+    public virtual ICollection<PcComponent> PcComponents { get; set; } = new List<PcComponent>();
 }

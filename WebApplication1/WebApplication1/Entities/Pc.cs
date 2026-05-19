@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace WebApplication1.Entities;
 
-public class PCs
+public class Pc
 {
     [Key]
     public int Id { get; set; }
@@ -12,5 +12,5 @@ public class PCs
     public int Warranty { get; set; }
     public DateTime CreatedAt { get; set; }
     public int Stock { get; set; }
-    public virtual ICollection<PcComponents> PcComponents { get; set; } = new List<PcComponents>();
+    public virtual ICollection<PcComponent> PcComponents { get; set; } = new List<PcComponent>();
 }

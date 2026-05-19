@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace WebApplication1.Entities;
 
-public class ComponentManufacturers
+public class ComponentManufacturer
 {
     [Key]
     public int Id { get; set; }
@@ -12,5 +12,5 @@ public class ComponentManufacturers
     [MaxLength(300)]
     public string FullName { get; set; } = null!;
     public DateTime FoundationDate { get; set; }
-    public virtual ICollection<Components> Components { get; set; } = new List<Components>();
+    public virtual ICollection<Component> Components { get; set; } = new List<Component>();
 }

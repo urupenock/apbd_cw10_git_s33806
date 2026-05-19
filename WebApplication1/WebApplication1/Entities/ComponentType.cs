@@ -2,7 +2,7 @@
 
 namespace WebApplication1.Entities;
 
-public class ComponentTypes
+public class ComponentType
 
 {
 
@@ -22,6 +22,6 @@ public class ComponentTypes
 
     public string Name { get; set; } = null!;
 
-    public virtual ICollection<Components> Components { get; set; } = new List<Components>();
+    public virtual ICollection<Component> Components { get; set; } = new List<Component>();
 
 }
